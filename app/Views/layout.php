@@ -8,7 +8,8 @@ if(uri_string()!=""){
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    
+    <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,6 +27,8 @@ if(uri_string()!=""){
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url()?>template1/css/sb-admin-2.min.css" rel="stylesheet">
+    
+    <?= $this->renderSection('customCSS') ?>
 
 </head>
 
@@ -90,8 +93,14 @@ if(uri_string()!=""){
         </div>
     </div>
 
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Select2 -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url()?>template1/vendor/jquery/jquery.min.js"></script>
     <script src="<?= base_url()?>template1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -104,7 +113,9 @@ if(uri_string()!=""){
     <!-- Page level custom scripts -->
     <script src="<?= base_url()?>template1/js/demo/chart-area-demo.js"></script>
    <script src="<?= base_url()?>template1/js/demo/chart-pie-demo.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<?= $this->renderSection('script') ?> 
 </body>
 
 </html>

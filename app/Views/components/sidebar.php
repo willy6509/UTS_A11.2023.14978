@@ -9,7 +9,7 @@ $role = session()->get('role');
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Furnitur<sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Elektronik<sup>2</sup></div>
     </a>
 
     <!-- Divider -->
@@ -22,21 +22,36 @@ $role = session()->get('role');
             <span>Home</span></a>
     </li>
 
-    <!-- Nav Item - Kategori -->
-    <li class="nav-item <?= (uri_string() == 'kategori') ? 'active' : '' ?>">
-        <a class="nav-link" href="/kategori">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Kategori</span></a>
+    <!-- Nav Item - produklist -->
+    <li class="nav-item <?= (uri_string() == 'produkList') ? 'active' : '' ?>">
+        <a class="nav-link" href="/produkList">
+                <i class="fas fa-fw fa-table"></i>
+            <span>Product List</span></a>
     </li>
+    <!-- Nav Item - keranjang -->
+    <li class="nav-item <?= (uri_string() == 'keranjang') ? 'active' : '' ?>">
+        <a class="nav-link" href="/keranjang">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Keranjang</span></a>
+    </li>
+    
+    <!-- Nav Item - produkman -->
+    <?php if ($role === 'admin') : ?>
+    <li class="nav-item <?= (uri_string() == 'produk') ? 'active' : '' ?>">
+        <a class="nav-link" href="/produk">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Product Management</span></a>
+    </li>
+    <?php endif; ?>
 
     <!-- Nav Item - Tables (Admin Only) -->
-    <?php if ($role === 'admin') : ?>
+    <!-- <?php if ($role === 'admin') : ?>
         <li class="nav-item <?= (uri_string() == 'datatable') ? 'active' : '' ?>">
             <a class="nav-link" href="/datatable">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Tables</span></a>
         </li>
-    <?php endif; ?>
+    <?php endif; ?> -->
 
     <!-- Logout -->
     <li class="nav-item">

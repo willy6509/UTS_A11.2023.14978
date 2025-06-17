@@ -21,8 +21,8 @@ class DashboardController extends BaseController
         if ($role === 'admin' && $currentPath !== 'admin') {
             return redirect()->to('/admin');
         }
-        if ($role === 'user' && $currentPath !== 'user') {
-            return redirect()->to('/user');
+        if ($role === 'guest' && $currentPath !== 'guest') {
+            return redirect()->to('/guest');
         }
 
         
@@ -38,7 +38,7 @@ class DashboardController extends BaseController
                     'last_login' => '2025-04-29 10:00:00'
                 ]
             ];
-        } elseif ($role === 'user') {
+        } elseif ($role === 'guest') {
             $data = [
                 'username' => $username,
                 'role' => $role,
