@@ -41,5 +41,9 @@ $routes->post('buy', 'TransaksiController::buy', ['filter' => 'rolefilter']);
 $routes->get('get-location', 'TransaksiController::getLocation', ['filter' => 'rolefilter']);
 $routes->get('get-cost', 'TransaksiController::getCost', ['filter' => 'rolefilter']);
 
+$routes->get('profile', 'Home::profile', ['filter' => 'rolefilter']);
+
+$routes->resource('api', ['controller' => 'apiController']);
+
 $routes->get('/datatable', 'DatatableController::index');
 

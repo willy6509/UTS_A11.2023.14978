@@ -15,6 +15,13 @@ $role = session()->get('role');
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
+    <li class="nav-item">
+    <a class="nav-link <?php echo (uri_string() == 'profile') ? "" : "collapsed" ?>" href="profile">
+        <i class="bi bi-person"></i>
+        <span>Profile</span>
+    </a>
+</li><!-- End Profile Nav -->
+
     <!-- Nav Item - Dashboard -->
     <li class="nav-item <?= (uri_string() == '') ? 'active' : '' ?>">
         <a class="nav-link" href="<?= base_url('/' . $role); ?>">
